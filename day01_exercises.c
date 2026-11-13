@@ -26,7 +26,9 @@ static void ex1_temperature(void)
 {
     int c = 37;
     double f = 0.0;   /* TODO：把 f 算对 */
-
+    double d = c * 9;
+    double e = d /5;
+    f = e + 32;
     printf("[第1题] 摄氏 %d 度 = 华氏 %.1f 度\n", c, f);
 }
 
@@ -52,7 +54,13 @@ double average(const int arr[], int n)
 {
     (void)arr;
     (void)n;
-    return 0.0;
+    int i;
+    double sum = 0;
+    for(i=0;i<n;i++)
+    {
+        sum += arr[i];
+    }
+    return sum/n;
 }
 
 /* TODO：在这里实现 max_value 函数 */
@@ -60,7 +68,16 @@ int max_value(const int arr[], int n)
 {
     (void)arr;
     (void)n;
-    return 0;
+    int i;
+   int max = arr[0];
+   for(i=1;i<n;i++)
+   {
+    if(max<arr[i])
+    {
+    max=arr[i];
+    }
+   }
+    return max;
 }
 
 static void ex2_scores(void)
@@ -91,8 +108,10 @@ static void ex2_scores(void)
 /* TODO：在这里实现 swap 函数 */
 void swap(int *a, int *b)
 {
-    (void)a;
-    (void)b;
+    int c;
+     c = *a;
+    *a = *b;
+    *b = c;
 }
 
 static void ex3_swap(void)
